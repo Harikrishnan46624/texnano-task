@@ -66,7 +66,10 @@ def get_hyper_params_from_optuna(trial):
     return penality, solver, C, fit_intercept, intercept_scaling, l1_ratio
 
 def sanity_checks(digits):
-    wandb.log({"Image Data Shape": digits.data.shape})
+    # Log individual components of Image Data Shape
+    wandb.log({"Image Data Shape (Number of Samples)": digits.data.shape[0]})
+    wandb.log({"Image Data Shape (Number of Features)": digits.data.shape[1]})
+    
     wandb.log({"Label Data Shape": digits.target.shape})
 
     plt.figure(figsize=(20, 4))
@@ -75,7 +78,8 @@ def sanity_checks(digits):
         plt.subplot(1, 5, index + 1)
         plt.imshow(np.reshape(image, (8, 8)), cmap=plt.cm.gray)
         plt.title("Training: %i\n" % label, fontsize=20)
-    
+
+    # Log the entire figure as media
     wandb.log({"Sanity Check Plot": plt})
 
 def visualize_test(x_test, y_test, predictions):
@@ -152,7 +156,7 @@ def objective(trial):
     return balanced_accuracy
 
 def main():
-    wandb.init(project="texnano_mlops") 
+    wandb.init(project="new_texnano_trail") 
     study = optuna.create_study(direction="maximize")
     study.optimize(objective, n_trials=5)
 
