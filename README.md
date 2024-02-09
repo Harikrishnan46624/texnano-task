@@ -18,8 +18,11 @@ Run the Pixi environment setup script to log experiments on W&B.
 
 To Run
 Install Pixi : iwr -useb https://pixi.sh/install.ps1 | iex
+
 intialize pixi : pixi init texnano
+
 add dependencies : pixi add python
+
 to run : pixi build start
 
 
