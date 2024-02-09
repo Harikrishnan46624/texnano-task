@@ -9,14 +9,19 @@ Code Files:
 test.py: Main Python script containing the ML development environment setup
 pixi.yml: Pixi configuration file specifying dependencies and settings.
 
-Environment Setup:
-Install Pixi by following the instructions in the Pixi Documentation.
-Run the Pixi environment setup script: pixi run start.
 
 W&B Integration:
 Sign up for a W&B account and obtain an API key.
-<WANDB_API_KEY> in the code with your actual API key.
+<e57a4d626b612a171a76930cd20adf3ec3e7f09e> in the code with your actual API key.
+create a project
 Run the Pixi environment setup script to log experiments on W&B.
+
+To Run
+Install Pixi : iwr -useb https://pixi.sh/install.ps1 | iex
+intialize pixi : pixi init texnano
+add dependencies : pixi add python
+to run : pixi build start
+
 
 Experiment Tracking:
 View experiment results on the W&B dashboard.
@@ -45,7 +50,7 @@ This repository contains the implementation of a deep learning framework, SimCLR
 
 Contents
 Code Files:
-SimCLR.ipynb: Main Python script containing the SimCLR model, loss, training, and evaluation functions.
+Task_2.ipynb: Main Python script containing the SimCLR model, loss, training, and evaluation functions.
 
 Training and Evaluation:
 The code trains the SimCLR model using the specified loss and evaluates its performance on a vision dataset.
@@ -59,7 +64,9 @@ The code includes a function (visualize_augmentations) to visualize augmentation
 Getting Started:
 
 Update the hyperparameters in the main function according to your preferences.
-Run the SimCLR implementation script: SimCLR.ipynb.
+
+
+Run the SimCLR implementation script: Task_2.ipynb.
 Dependencies
 PyTorch
 torchvision
